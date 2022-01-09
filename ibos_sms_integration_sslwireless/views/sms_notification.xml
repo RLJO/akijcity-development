@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_sms_notification_tree" model="ir.ui.view">
+        <field name="name">view.sms.notification.tree</field>
+        <field name="model">sms.notification.history</field>
+        <field name="arch" type="xml">
+            <tree string="SMS Notification" editable="bottom">
+                <field name="message" readonly="1"/>
+                <field name="mobile"/>
+                <field name="status"/>
+                <field name="create_date"/>
+                <field name="reference_id"/>
+                <field name="error_msg"/>
+                <field name="response" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_sms_notification_history">
+        <field name="name">SMS Notification</field>
+        <field name="res_model">sms.notification.history</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_sms_notification_tree"/>
+    </record>
+
+
+    <menuitem id="menu_sms_notification_pos"
+              name="SMS Notification"
+              parent="point_of_sale.menu_point_rep"
+              action="action_sms_notification_history"
+              groups="base.group_user"
+              sequence="100"/>
+</odoo>

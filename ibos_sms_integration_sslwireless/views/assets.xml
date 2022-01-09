@@ -1,0 +1,9 @@
+<odoo>
+    <template id="assets" inherit_id="point_of_sale.assets">
+        <xpath expr="." position="inside">
+            <script
+                type="text/javascript"
+                src="/ibos_sms_integration_sslwireless/static/src/js/send_sms.js"/>
+        </xpath>
+    </template>
+</odoo>

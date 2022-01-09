@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sms_notification_history_user,sms_notification_history_user,model_sms_notification_history,base.group_user,1,0,1,0
